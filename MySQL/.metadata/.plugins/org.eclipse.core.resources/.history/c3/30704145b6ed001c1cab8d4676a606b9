@@ -1,0 +1,37 @@
+package com.dhollinger.languages.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dhollinger.languages.models.Language;
+import com.dhollinger.languages.repos.LanguageRepo;
+
+
+@Service
+public class LanguageService {
+	@Autowired
+	private LanguageRepo languageRepo;
+	public LanguageService (LanguageRepo languageRepo) {
+		this.languageRepo = languageRepo;
+	}
+	public List<Language> alllangauge(){
+		return languageRepo.findall();
+	}
+	public Language findalllangauge(Long id) {
+		Optional<Language> optionalSaver = languageRepo.findById(id);
+		if(optionalSaver.isPresent()) {
+			return optionalSaver.get();
+		} else {
+			return null;
+		}
+	}
+	public Language saveSaver(Language language) {
+		return languageRepo.save(language);
+	}
+	public void deleteSaver(Long id) {
+		languageRepo.deleteById(id);
+	}
+}

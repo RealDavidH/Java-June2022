@@ -1,0 +1,26 @@
+package com.dhollinger.bookclub.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dhollinger.bookclub.servs.BookServ;
+import com.dhollinger.bookclub.servs.UserServ;
+
+public class IndexController {
+	private final UserServ userServ;
+	private final BookServ bookServ;
+	public IndexController(Bookserv bookServ, UserServ userServ) {
+		this.bookServ = bookServ;
+		this.userServ = userServ;
+	}
+	@RequestMapping("/books")
+	public String renderIndex(Model model, HttpSession session) {
+		if(session.getAttribute("uuid") == null) {
+			return "redirect:/";
+		}
+		model.addAttribute("user", userServ.getOne(session.getAttribute("uuid")));
+		model.addAttribute("allBooks" bookServ.getAll())
+	}
+}

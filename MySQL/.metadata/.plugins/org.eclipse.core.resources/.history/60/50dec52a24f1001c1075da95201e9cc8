@@ -1,0 +1,52 @@
+package com.dhollinger.loginreg.controllers;
+
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dhollinger.loginreg.models.LoginUser;
+import com.dhollinger.loginreg.models.User;
+import com.dhollinger.loginreg.servs.UserServ;
+
+@Controller
+public class UserController {
+	private final UserServ serv;
+	public UserController(UserServ serv) {
+		this.serv = serv;
+	}
+	@RequestMapping("/")
+	public String loadLoginReg(Model model) {
+		model.addAttribute("newUser", new User());
+		model.addAttribute("loginUser", new LoginUser());
+		return "login.jsp";
+	}
+	@RequestMapping("/register")
+	public String checkReg(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, Model model, HttpSession session) {
+		if(result.hasErrors()) {
+			model.addAttribute("loginUser", new LoginUser());
+			return "/login.jsp";
+		} else {
+			User user = serv.register(newUser, result);
+//			Long id = user.getId();
+//			session.setAttribute("uuid", id);
+			System.out.println(user);
+			return "redirect:/view"; //plus id of uuid
+		}
+	}
+	@RequestMapping("/login")
+	public String checkLogin(@Valid @ModelAttribute("loginUser") LoginUser loginUser, BindingResult result, Model model, HttpSession session) {
+		if(result.hasErrors()) {
+			model.addAttribute("newUser", new User());
+			return "/login.jsp";
+		} else {
+			serv.login(loginUser, result);
+//			session.setAttribute("uuid", id);
+			return "redirect:/view"; //plus id of uuid
+		}
+	}
+}

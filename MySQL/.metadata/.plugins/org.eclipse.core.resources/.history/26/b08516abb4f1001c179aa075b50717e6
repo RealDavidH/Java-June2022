@@ -1,0 +1,10 @@
+package com.dhollinger.bookclub.repos;
+
+import java.util.List;
+
+import com.dhollinger.bookclub.models.User;
+
+@Repository
+public class BorrowedRepo {
+	List<Book> findAll();
+}

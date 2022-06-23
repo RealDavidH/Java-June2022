@@ -1,0 +1,46 @@
+package com.dhollinger.ninjaGold.controller;
+
+import java.util.Random;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+	Random random = new Random();
+	@RequestMapping("/")
+	public String renderIndex(HttpSession session, Model model) {
+		if(session.isNew()) {
+			session.setAttribute("gold", 0);
+		} 
+		System.out.println(session.isNew());
+		model.addAttribute("gold", session.getAttribute("gold"));
+		return "index.jsp";
+	}
+	@RequestMapping("/{name}")
+	public String processgold(HttpSession session, @PathVariable("name") String name) {
+		int gold = (Integer) session.getAttribute("gold");
+		System.out.println(name);
+		if(name == "farm") {
+			gold += random.nextInt(20 - 10 + 1) + 10;
+			session.setAttribute("gold", gold);
+		} else if(name == "cave") {
+			gold += random.nextInt(10 - 5 + 1) + 5;
+			session.setAttribute("gold", gold);
+		} else if(name == "house") {
+			gold += random.nextInt(5 - 2 + 1) + 2;
+			session.setAttribute("gold", gold);
+		} else {
+			int randnum = random.nextInt(50 - -50 + 1) + -50;
+			gold += randnum;
+			session.setAttribute("gold", gold);
+		}
+		return "redirect:/";
+		
+	}
+	
+}

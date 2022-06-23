@@ -1,0 +1,6 @@
+package com.dhollinger.bookclub.repos;
+
+@Repository
+public class BorrowedRepo {
+
+}

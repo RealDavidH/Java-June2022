@@ -1,0 +1,8 @@
+package com.dhollinger.loginreg.models;
+
+public class LoginUser {
+	
+	@NotEmpty(message="Email is required")
+	@Email(message="Please enter a valid email")
+	
+}

@@ -1,0 +1,10 @@
+package zookeeper;
+
+public class Mammal {
+	int energy = 100;
+	
+	
+	public int displayEnergy() {
+		
+	}
+}

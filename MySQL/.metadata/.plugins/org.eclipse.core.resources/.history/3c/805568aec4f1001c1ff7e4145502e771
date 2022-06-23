@@ -1,0 +1,23 @@
+package com.dhollinger.products.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "products")
+public class Product {
+	@Id
+	@GeneratedValue(srategy = GenerationType.Identity)
+	private Long id;
+	
+	@NotEmpty(message="Description is required")
+	@Size(min=3, message="Description must be at least 2 characters!")
+	private String description;
+	
+	@NotEmpty(message = "Price is required")
+}

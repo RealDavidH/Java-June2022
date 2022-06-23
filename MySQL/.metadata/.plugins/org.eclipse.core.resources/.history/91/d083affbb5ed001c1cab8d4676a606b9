@@ -1,0 +1,12 @@
+package com.dhollinger.languages.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dhollinger.languages.repos.LanguageRepo;
+
+@Service
+public class LanguageService {
+	@Autowired
+	private LanguageRepo languageRepo;
+}

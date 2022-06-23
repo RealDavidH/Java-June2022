@@ -1,0 +1,6 @@
+package com.dhollinger.bookclub.servs;
+
+@Service
+public class UserServ {
+	
+}

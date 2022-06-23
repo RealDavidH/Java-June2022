@@ -1,0 +1,13 @@
+package com.dhollinger.dojosNinjas.controllers;
+
+import org.springframework.stereotype.Controller;
+
+import com.dhollinger.dojosNinjas.services.NinjaServ;
+
+@Controller
+public class NinjaController {
+	private final NinjaServ serv
+	public NinjaController(NinjaServ serv) {
+		this.serv = serv;
+	}
+}

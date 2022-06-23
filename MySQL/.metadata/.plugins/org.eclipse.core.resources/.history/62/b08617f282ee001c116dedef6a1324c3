@@ -1,0 +1,6 @@
+package com.dhollinger.dojosNinjas.services;
+
+@Service
+public class DojoServ {
+	@Autowired
+}

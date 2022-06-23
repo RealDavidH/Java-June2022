@@ -1,0 +1,11 @@
+package com.dhollinger.saveTravels.models;
+
+
+@Entity
+@Table(name = "savers")
+public class Saver {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+}

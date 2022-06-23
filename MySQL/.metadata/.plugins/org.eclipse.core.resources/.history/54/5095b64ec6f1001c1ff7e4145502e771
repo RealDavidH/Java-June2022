@@ -1,0 +1,7 @@
+package com.dhollinger.products.models;
+
+@Entity
+@Table(name = "categories_products")
+public class CategoryProduct {
+
+}

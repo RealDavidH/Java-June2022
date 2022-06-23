@@ -1,0 +1,10 @@
+package com.example.demo;
+
+
+@RestController
+public class HomeController {
+	@RequestMapping("/")
+	public String hello() {
+		return "Hello world";
+	}
+}

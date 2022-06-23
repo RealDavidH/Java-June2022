@@ -1,0 +1,45 @@
+package com.dhollinger.bookclub.servs;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dhollinger.bookclub.models.User;
+import com.dhollinger.bookclub.repos.UserRepo;
+
+@Service
+public class UserServ {
+	@Autowired
+	private UserRepo repo;
+	
+	public UserServ(UserRepo repo) {
+		this.repo = repo;
+	}
+	
+	public List<User> getAll(){
+		return repo.findAll();
+	}
+	
+	public User getOne(Long id) {
+		Optional<User> opUser = repo.findById(id);
+		if(!opUser.isPresent()) {
+			return null;
+		}
+		return opUser.get();
+	}
+	public User getOneByEmail(String email) {
+		Optional<User> opUser = repo.findByEmail(email);
+		if(!opUser.isPresent()) {
+			return null;
+		}
+		return opUser.get();
+	}
+	public User saveOne(User user) {
+		return repo.save(user);
+	}
+	public void deleteOne(Long id) {
+		repo.deleteById(id);
+	}
+}

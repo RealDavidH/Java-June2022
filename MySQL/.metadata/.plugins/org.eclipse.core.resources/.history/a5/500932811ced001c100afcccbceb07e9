@@ -1,0 +1,9 @@
+package com.dhollinger.saveTravels.repsitories;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.dhollinger.booksapi.models.Book;
+
+public interface SaverRepo  extends CrudRepository<Saver, Long>
+
+}

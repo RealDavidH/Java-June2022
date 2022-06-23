@@ -1,0 +1,18 @@
+package com.dhollinger.hellohuman.controllers;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+
+public class controller {
+	@RequestMapping("/")
+	public String index() {
+		model.addAttribute("dojoName", "Yo mama");
+		return "helloWorld.jsp";
+	}
+		
+
+}

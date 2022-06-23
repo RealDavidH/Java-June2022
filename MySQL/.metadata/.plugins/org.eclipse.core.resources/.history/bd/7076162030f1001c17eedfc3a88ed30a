@@ -1,0 +1,32 @@
+package com.dhollinger.bookclub.servs;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dhollinger.bookclub.models.User;
+import com.dhollinger.bookclub.repos.UserRepo;
+
+@Service
+public class UserServ {
+	@Autowired
+	private UserRepo repo;
+	
+	public UserServ(UserRepo repo) {
+		this.repo = repo;
+	}
+	
+	public List<User> getAll(){
+		return repo.findAll();
+	}
+	
+	public User getOne(Long id) {
+		Optional<User> opUser = repo.findAllById(id);
+		if(!opUser.isPresent()) {
+			return null;
+		}
+		return opUser.get();
+	}
+}

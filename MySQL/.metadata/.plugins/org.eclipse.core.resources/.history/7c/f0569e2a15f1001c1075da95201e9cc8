@@ -1,0 +1,15 @@
+package com.dhollinger.loginreg.models;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+public class LoginUser {
+	
+	@NotEmpty(message="Email is required!")
+	@Email(message="Please enter a valid email!")
+	private String email;
+	
+	@NotEmpty(message="Password is Required!")
+	@Size(min=8, max=128, message="Password must be at least 8 characters!")
+	
+}

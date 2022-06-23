@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+F:\Code\Coding_Dojo\Java\Exam\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3736783533.index
+\joyJavaExam\src\main\java
+F:\Code\Coding_Dojo\Java\Exam\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4268544795.index
+\javaExam\src\main\java
+F:\Code\Coding_Dojo\Java\Exam\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3818987530.index
+\joyJavaExam\src\main\java

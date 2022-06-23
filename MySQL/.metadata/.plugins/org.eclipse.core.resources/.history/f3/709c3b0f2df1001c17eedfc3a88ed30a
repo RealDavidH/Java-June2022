@@ -1,0 +1,5 @@
+package com.dhollinger.bookclub.models;
+
+public class LoginUser {
+
+}

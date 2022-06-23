@@ -1,0 +1,14 @@
+package com.dhollinger.hellohuman.controllers;
+
+
+@RestController
+
+public class controller {
+	@RequestMapping("/")
+	public String index(@RequestParam(value="name", required=false) String firstName) {
+		if(firstName) {
+			return "Hello" + firstName;
+		}
+	}
+
+}

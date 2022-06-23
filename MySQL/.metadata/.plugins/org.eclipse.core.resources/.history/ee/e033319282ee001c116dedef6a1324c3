@@ -1,0 +1,8 @@
+package com.dhollinger.dojosNinjas.repos;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface DojoRepo {
+
+}

@@ -1,0 +1,9 @@
+package com.dhollinger.languages.models;
+
+
+@Entity
+@Table(name = "language")
+public class Language {
+	@Id
+	@GenerateValue(strategy = GenerationType.IDENTITY)
+}

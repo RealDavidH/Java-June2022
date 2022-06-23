@@ -1,0 +1,13 @@
+package com.dhollinger.loginreg.models;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name - "user")
+public class User {
+	@Id
+	@GeneratedValu(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+}

@@ -1,0 +1,27 @@
+package com.dhollinger.bookclub.servs;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.dhollinger.bookclub.models.Book;
+import com.dhollinger.bookclub.repos.BookRepo;
+
+public class BookServ {
+	private BookRepo repo;
+	
+	public BookServ(BookRepo repo) {
+		this.repo = repo;
+	}
+	
+	public List<Book> getAll(){
+		return repo.findAll();
+	}
+	public Book getOne(Long id) {
+		Optional <Book> opBook = repo.findById(id);
+		if(!opBook.isPresent()) {
+			return null;
+		}
+		return opBook.get();
+	}
+	
+}

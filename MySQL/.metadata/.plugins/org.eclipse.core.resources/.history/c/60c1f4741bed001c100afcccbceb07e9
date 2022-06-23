@@ -1,0 +1,5 @@
+package com.dhollinger.saveTravels.models;
+
+public class Saver {
+
+}

@@ -1,0 +1,6 @@
+package com.dhollinger.hopperreceipt;
+
+@RequestMapping
+public class Controller {
+	
+}

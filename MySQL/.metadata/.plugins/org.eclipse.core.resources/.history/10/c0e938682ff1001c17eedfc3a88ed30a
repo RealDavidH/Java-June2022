@@ -1,0 +1,5 @@
+package com.dhollinger.bookclub.repos;
+@Repository
+public interface User extends CrudRepository<User, Long> {
+
+}

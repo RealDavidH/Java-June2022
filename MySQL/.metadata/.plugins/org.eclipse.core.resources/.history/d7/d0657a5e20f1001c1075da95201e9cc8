@@ -1,0 +1,47 @@
+package com.dhollinger.loginreg.servs;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
+
+import com.dhollinger.loginreg.models.User;
+import com.dhollinger.loginreg.repos.UserRepo;
+
+@Service
+public class UserServ {
+	@Autowired
+	private UserRepo repo;
+	public UserServ(UserRepo repo) {
+		this.repo = repo;
+	}
+	
+	public List<User> getAll(){
+		return repo.findAll();
+	}
+	public Optional<User> getByEmail(String email){
+		return repo.findByEmail(email);
+	}
+	public User getOne(Long id) {
+		Optional<User> opUser = repo.findById(id);
+		if(opUser.isPresent()) {
+			return opUser.get();
+		} else {
+			return null;
+		}
+	}
+	public User saveOne(User user) {
+		return repo.save(user);
+	}
+	public void deleteOne(Long id) {
+		repo.deleteById(id);
+	}
+	public User register(User newUser, BindingResult result) {
+		
+	}
+	public User login(LoginUser loginUser, BindingResult result) {
+		
+	}
+}

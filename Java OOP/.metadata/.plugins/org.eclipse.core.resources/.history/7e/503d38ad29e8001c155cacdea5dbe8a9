@@ -1,0 +1,18 @@
+package uno;
+import java.util.*;
+
+public class Player {
+	private ArrayList<Object> currentHand;
+	private String name;
+	
+	Deck unoDeck = new Deck();
+	
+	public Player() { //to make the player first time around. 
+		this.currentHand = unoDeck.drawCards();  
+	}
+	
+	public void playerDraw() {
+		this.currentHand.add(//name of draw card function);
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.dhollinger.loginreg.models;
+
+public class LoginUser {
+
+}

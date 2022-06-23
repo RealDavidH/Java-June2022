@@ -1,0 +1,26 @@
+package com.dhollinger.cpunter.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/")
+public class IndexController {
+	@RequestMapping("")
+	public String index() {
+		return "index.jsp";
+	}
+	@RequestMapping("/counter")
+	public String counter(HttpSession session) {
+		if (session.getAttribute("count") == null) {
+			session.setAttribute("count", 0)
+			}
+			else {
+			int currentcount = (Integer) session.getAttribute("count") + 1; 
+			session.setAttribute("count", currentcount);
+			}
+		return "counter.jsp";
+	}
+}

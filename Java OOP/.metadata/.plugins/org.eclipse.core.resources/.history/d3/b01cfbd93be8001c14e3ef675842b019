@@ -1,0 +1,13 @@
+package uno;
+
+public class GameTest {
+
+	public static void main(String[] args) {
+		System.out.println("Please enter the number of players:");
+		int numOfPlayers = System.console().readLine();
+		Game play = new Game(numOfPlayers);
+		
+
+	}
+
+}

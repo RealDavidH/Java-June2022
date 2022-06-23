@@ -1,0 +1,5 @@
+package com.dhollinger.bookclub.repos;
+
+public interface UserRepo {
+
+}

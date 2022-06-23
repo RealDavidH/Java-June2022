@@ -1,0 +1,13 @@
+package zookeeper;
+
+public class Gorilla extends Mammal {
+	
+	public void eatBananas() {
+		this.energy += 10;
+	}
+	public void throwSomething() {
+		System.out.println("Ooo aahhh ahh, I throw something at people");
+		this.energy -= 5;
+	}
+	
+}

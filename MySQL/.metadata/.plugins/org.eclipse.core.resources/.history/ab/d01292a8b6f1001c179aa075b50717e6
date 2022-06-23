@@ -1,0 +1,15 @@
+package com.dhollinger.bookclub.servs;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.dhollinger.bookclub.repos.BorrowedRepo;
+
+@Service
+public class BorrowedServ {
+	@Autowired
+	private BorrowedRepo repo;
+	public BorrowedServ(BorrowedRepo repo) {
+		this.repo = repo;
+	}
+}

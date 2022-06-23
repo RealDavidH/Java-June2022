@@ -1,0 +1,9 @@
+package com.dhollinger.dojosNinjas.repos;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.dhollinger.dojosNinjas.models.Ninja;
+@Repository
+public interface NinjaRepo extends CrudRepository<Ninja, Long>{
+
+}

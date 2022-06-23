@@ -1,0 +1,11 @@
+package com.dhollinger.bookclub.servs;
+
+import com.dhollinger.bookclub.repos.BookRepo;
+
+public class BookServ {
+	private BookRepo repo;
+	
+	public BookServ(BookRepo repo) {
+		this.repo = repo;
+	}
+}

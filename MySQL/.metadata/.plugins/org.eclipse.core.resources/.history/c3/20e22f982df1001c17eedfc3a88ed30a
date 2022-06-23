@@ -1,0 +1,7 @@
+package com.dhollinger.bookclub.models;
+
+@Entity
+@Table(name = "books")
+public class Book {
+
+}

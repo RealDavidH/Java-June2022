@@ -1,0 +1,44 @@
+package uno;
+import java.util.*;
+
+public class Game {
+	public ArrayList<Player> playerList;
+	public Deck unoDeck;
+	public Card topCard;
+	
+	
+	
+	public Game(int numOfPlayers) {
+		this.unoDeck = new Deck();
+		this.topCard = unoDeck.drawOne();
+		int i = 0;
+		while( i < numOfPlayers) {
+			System.out.println("Player please enter your name."); //Would like to add player number 
+			String name = System.console().readLine();
+			Player player = new Player(name);
+			player.setHand(unoDeck.drawCards(7));
+			playerList.add(player);
+			
+		}
+	}
+	
+	public void runGame() {
+		boolean isWinner = false;
+		int numOfPlayers = playerList.size();
+		int turnCounter = 0; 
+		while(!isWinner) {
+			System.out.println(String.format("The card on top is %s %d", topCard.getColor(), topCard.getNumber()));
+			Player currentPlayer = playerList.get(turnCounter);
+			System.out.println(String.format("%s, it is your turn.", currentPlayer.getName()));
+			String currentPlayerHand;
+			for(int i = 0; i < currentPlayer.getHand().size(); i++) {
+				currentPlayerHand += currentPlayer.getHand().get(i);
+			}
+			System.out.println(String.format(""));
+			
+			
+		}
+		
+	}
+
+}

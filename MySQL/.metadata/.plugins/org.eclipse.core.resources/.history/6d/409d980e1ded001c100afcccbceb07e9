@@ -1,0 +1,11 @@
+package com.dhollinger.saveTravels.services;
+
+import com.dhollinger.saveTravels.repsitories.SaverRepo;
+
+public class SaverService {
+	private final SaverRepo saverRepo;
+	
+	public SaverService(SaverRepo saverRepo) {
+		this.saverRepo = saverRepo;
+	}
+}

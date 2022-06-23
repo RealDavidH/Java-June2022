@@ -1,0 +1,5 @@
+package com.dhollinger.dojosNinjas.repos;
+
+public interface NinjaRepo {
+
+}

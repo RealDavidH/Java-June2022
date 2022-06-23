@@ -1,0 +1,11 @@
+package com.dhollinger.languages.repos;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.dhollinger.languages.models.Language;
+
+public interface LanguageRepo extends CrudRepository<Language, Long> {
+	List<Language> findall();
+}

@@ -1,0 +1,12 @@
+package com.dhollinger.bookclub.repos;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.dhollinger.bookclub.models.User;
+@Repository
+public interface UserRepo extends CrudRepository<User, Long>{
+		List<User> findAll();
+		User findByEmail();
+}

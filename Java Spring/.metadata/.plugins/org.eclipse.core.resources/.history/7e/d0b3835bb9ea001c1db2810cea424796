@@ -1,0 +1,7 @@
+package com.dhollinger.fruityloops;
+
+public class Item {
+	String name;
+	double price;
+
+}

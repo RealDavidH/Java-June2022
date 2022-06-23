@@ -1,0 +1,7 @@
+package com.fruityloops.dhollinger.controllers;
+
+
+@Controller
+public class IndexController {
+
+}

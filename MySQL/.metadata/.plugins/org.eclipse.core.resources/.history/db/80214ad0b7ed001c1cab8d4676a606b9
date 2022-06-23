@@ -1,0 +1,24 @@
+package com.dhollinger.languages.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dhollinger.languages.services.LanguageService;
+
+@Controller
+public class LanguageController {
+	private final LanguageService languageService;
+	public LanguageController(LanguageService languageService) {
+		this.languageService = languageService;
+	}
+	@RequestMapping("/")
+	public String redirctToHome() {
+		return "redirect:/languages";
+	}
+	@RequestMapping("/languages")
+	public String renderIndex(Model model) {
+		model.addAttribute("allLanguage", languageService.alllangauge());
+		return "languageIndex.jsp";
+	}
+}

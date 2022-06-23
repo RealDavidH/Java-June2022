@@ -1,0 +1,44 @@
+package com.dhollinger.ninjaGold.controller;
+
+import java.util.Random;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class MainController {
+	Random random = new Random();
+	@RequestMapping("/")
+	public String renderIndex(HttpSession session, Model model) {
+		if(session.isNew()) {
+			session.setAttribute("gold", 0);
+		} 
+		System.out.println(session.isNew());
+		model.addAttribute("gold", session.getAttribute("gold"));
+		return "index.jsp";
+	}
+	@RequestMapping("/process")
+	public String processgold(HttpSession session, @RequestParam(value = "name") String name) {
+		int gold = (Integer) session.getAttribute("gold");
+		if(name == "farm") {
+			gold += random.nextInt(20 - 10 + 1) + 10;
+			session.setAttribute("gold", gold);
+		} else if(name == "cave") {
+			gold += random.nextInt(10 - 5 + 1) + 5;
+			session.setAttribute("gold", gold);
+		} else if(name == "house") {
+			gold += random.nextInt(5 - 2 + 1) + 2;
+			session.setAttribute("gold", gold);
+		} else {
+			gold += random.nextInt(50 - -50 + 1) + -50;
+			session.setAttribute("gold", gold);
+		}
+		return "index.jsp";
+		
+	}
+	
+}

@@ -1,0 +1,10 @@
+package zookeeper;
+
+public class Gorilla extends Mammal {
+	
+	public void eatBananas() {
+		this.energy += 10;
+		
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.dhollinger.languages.repos;
+
+public interface LanguageRepo {
+
+}

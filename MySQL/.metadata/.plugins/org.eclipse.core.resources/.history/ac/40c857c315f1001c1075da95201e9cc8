@@ -1,0 +1,8 @@
+package com.dhollinger.loginreg.repos;
+
+import com.dhollinger.loginreg.models.User;
+
+@Repository
+public class UserRepo extends CrudRepository<User, Long> {
+
+}

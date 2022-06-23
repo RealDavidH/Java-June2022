@@ -1,0 +1,9 @@
+package com.dhollinger.languages.repos;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.dhollinger.saveTravels.models.Saver;
+
+public interface LanguageRepo extends CrudRepository<Saver, Long {
+
+}

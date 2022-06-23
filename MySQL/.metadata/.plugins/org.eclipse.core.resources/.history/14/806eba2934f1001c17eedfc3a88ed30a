@@ -1,0 +1,10 @@
+package com.dhollinger.bookclub.controllers;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class IndexController {
+	@RequestMapping("/books")
+	public String renderIndex(Model model, HttpSession session) {
+		
+	}
+}

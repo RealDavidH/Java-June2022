@@ -1,0 +1,3 @@
+INDEX VERSION 1.4+F:\Code\Coding_Dojo\Java\Exam\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3645622940.index
+3730914091.index

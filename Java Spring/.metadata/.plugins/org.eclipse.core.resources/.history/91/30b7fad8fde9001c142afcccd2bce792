@@ -1,0 +1,9 @@
+package com.dakiRoutes.dhollinger;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/daikichi")
+@RequestController
+public class DaikichiController {
+
+}

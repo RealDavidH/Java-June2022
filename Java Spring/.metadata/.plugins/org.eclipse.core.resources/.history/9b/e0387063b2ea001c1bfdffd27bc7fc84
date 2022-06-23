@@ -1,0 +1,11 @@
+package com.dhollinger.hopperreceipt;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("")
+public class Controller {
+	@RequestMapping("")
+	public String index(Model model) {
+		
+	}
+}

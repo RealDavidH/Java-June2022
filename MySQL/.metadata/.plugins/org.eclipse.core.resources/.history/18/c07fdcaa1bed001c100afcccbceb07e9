@@ -1,0 +1,15 @@
+package com.dhollinger.saveTravels.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "savers")
+public class Saver {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+}

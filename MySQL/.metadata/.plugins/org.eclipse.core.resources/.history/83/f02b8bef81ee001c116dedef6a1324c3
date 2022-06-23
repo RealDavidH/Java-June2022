@@ -1,0 +1,10 @@
+package com.dhollinger.dojosNinjas.models;
+
+@Entity
+@Table(name = "ninjas")
+public class Ninja {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+}

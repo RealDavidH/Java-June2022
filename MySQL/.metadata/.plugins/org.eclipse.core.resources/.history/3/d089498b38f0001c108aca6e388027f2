@@ -1,0 +1,29 @@
+package com.dhollinger.loginreg.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "user")
+public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@NotEmpty(message="User name is required")
+	@Size(min = 3, max = 128, message="User name must be 3 charcters")
+	private String username;
+	@NotEmpty(message="Email is required")
+	@Email(message="Invaild email format")
+	private String email;
+	@NotEmpty(message="Password is required")
+	@Size(min = 3, max= 128, message="Password must be 3 charcters")
+	private String password;
+	@NotEmpy(message="Confirm your password")
+	@Size(min = 3, max = 128, message="Confirm password must be 3 charcters")
+}

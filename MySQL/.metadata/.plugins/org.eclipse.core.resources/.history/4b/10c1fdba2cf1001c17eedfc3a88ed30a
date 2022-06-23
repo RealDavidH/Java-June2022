@@ -1,0 +1,39 @@
+package com.dhollinger.bookclub.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "users")
+public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@NotEmpty(message = "Name must not be empty!")
+	@Size(min = 2, max = 40, message="Name must be at least 2 characters!")
+	private String name;
+	
+	@NotEmpty(message= "Email is required!")
+	@Email(message="Enter a valid email format!")
+	private String email;
+	
+	@NotEmpty(message="Password is required!")
+	@Size(min = 8, max = 40, message="Password must be at least 8 characters!")
+	private String password;
+	
+	@Transient
+	@NotEmpty(message="Confirm your password!")
+	@Size(min = 3, max = 128, message="Confirmation password must be at least 8 characters!")
+	
+	
+	
+}

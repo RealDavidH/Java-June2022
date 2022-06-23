@@ -1,0 +1,5 @@
+package com.fruityloops.dhollinger.controllers;
+
+public class IndexController {
+
+}

@@ -1,0 +1,36 @@
+package com.dhollinger.saveTravels.controllers;
+
+import javax.validation.Valid;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dhollinger.saveTravels.models.Saver;
+import com.dhollinger.saveTravels.services.SaverService;
+
+@Controller
+public class SaverController {
+	private final SaverService saverService;
+	
+	public SaverController(SaverService saverService) {
+		this.saverService = saverService;
+	}
+	@RequestMapping("/expenses")
+	public String renderExpenses(Model model) {
+		model.addAttribute("saver", saverService.allsavers());
+		return "exenses.jsp";
+	}
+	@PostMapping("/process")
+	public String processFormData(@Valid @ModelAttribute("saver") Saver saver, BindingResult result) {
+		if(result.hasErrors()) {
+			return "/expenses.jsp";
+		} else {
+			saverService.saveSaver(saver);
+			return "redirect:/expenses";
+		}
+	}
+}

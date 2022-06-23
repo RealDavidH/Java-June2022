@@ -1,0 +1,15 @@
+package zookeeper;
+
+public class TestZoo {
+
+	public static void main(String[] args) {
+		Gorilla orge = new Gorilla();
+		orge.throwSomething();
+		orge.throwSomething();
+		orge.throwSomething();
+		orge.eatBananas();
+		orge.eatBananas();
+		orge.climbTree();
+	}
+
+}

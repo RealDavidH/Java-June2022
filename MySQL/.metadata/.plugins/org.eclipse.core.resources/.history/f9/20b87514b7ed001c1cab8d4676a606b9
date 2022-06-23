@@ -1,0 +1,13 @@
+package com.dhollinger.languages.controllers;
+
+import org.springframework.stereotype.Controller;
+
+import com.dhollinger.languages.services.LanguageService;
+
+@Controller
+public class LanguageController {
+	private final LanguageService languageService;
+	public LanguageController(LanguageService languageService) {
+		this.languageService = languageService;
+	}
+}

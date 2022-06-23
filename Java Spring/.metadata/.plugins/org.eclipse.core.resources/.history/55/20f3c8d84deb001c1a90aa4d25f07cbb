@@ -1,0 +1,5 @@
+package com.dhollinger.cpunter.controllers;
+
+public class IndexController {
+
+}

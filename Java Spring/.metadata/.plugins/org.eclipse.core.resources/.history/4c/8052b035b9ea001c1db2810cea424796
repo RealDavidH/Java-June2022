@@ -1,0 +1,8 @@
+package com.fruityloops.dhollinger.controllers;
+
+
+@Controller
+@RequestMapping("/")
+public class IndexController {
+	
+}

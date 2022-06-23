@@ -1,0 +1,17 @@
+package com.dhollinger.bookclub.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class IndexController {
+	private final UserServ userServ;
+	@RequestMapping("/books")
+	public String renderIndex(Model model, HttpSession session) {
+		if(session.getAttribute("uuid") == null) {
+			return "redirect:/";
+		}
+		model.addAttribute("user", serv. )
+	}
+}

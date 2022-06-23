@@ -1,0 +1,10 @@
+package com.dakiRoutes.dhollinger;
+
+
+@RequestMapping
+@RequestController("/daikichi")
+public class DaikichiController {
+	
+	
+
+}
